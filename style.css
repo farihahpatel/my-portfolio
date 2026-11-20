@@ -1,0 +1,171 @@
+/* ---------- Colours (change these to restyle the whole site) ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --primary: #7c3aed;
+  --card: #f5f3ff;
+  --nav: #1f1b2e;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --muted: #aaaaaa;
+  --primary: #a78bfa;
+  --card: #1e1b2e;
+  --nav: #000000;
+}
+
+/* ---------- Basics ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+a { color: var(--primary); }
+
+/* ---------- Navigation ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav);
+}
+
+nav {
+  max-width: 1000px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo { color: #fff; font-weight: bold; }
+
+.nav-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+.nav-links a { color: #fff; text-decoration: none; }
+.nav-links a:hover { color: var(--primary); }
+
+#theme-toggle {
+  background: none;
+  border: 1px solid #888;
+  border-radius: 6px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ---------- Sections ---------- */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: var(--primary);
+}
+
+h3 { margin: 18px 0 8px; }
+
+/* ---------- Home ---------- */
+#home {
+  text-align: center;
+  padding: 110px 20px;
+}
+
+.hello { color: var(--muted); }
+
+#home h1 { font-size: 3rem; margin: 6px 0 14px; }
+
+.tagline { color: var(--muted); margin-bottom: 26px; }
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover { opacity: 0.85; }
+
+/* ---------- About ---------- */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills li {
+  background: var(--card);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ---------- Projects ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card h3 { margin-top: 0; }
+
+.card p { margin-bottom: 12px; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 2px 9px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.card a { display: block; text-decoration: none; font-weight: bold; }
+
+/* ---------- Contact ---------- */
+.contact-list { list-style: none; margin-top: 12px; }
+.contact-list li { margin-bottom: 8px; }
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 24px;
+  background: var(--nav);
+  color: #ccc;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  nav { flex-direction: column; }
+  #home h1 { font-size: 2.2rem; }
+  section { padding: 50px 16px; }
+}
